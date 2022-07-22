@@ -98,7 +98,7 @@ float config
 
 ## **AlfaMetrics**
 
-The AlfaMetrics message type is used to send a group of MetricMessages. A message tag and a vector of MetricMessage define this message type. 
+The *AlfaMetrics* message type is used to send a group of MetricMessages. A message tag and a vector of MetricMessage define this message type. 
 
 ```c
 string message_tag
@@ -107,7 +107,7 @@ MetricMessage[] metrics
 
 ## **AlfaAlivePing**
 
-
+The *AlfaAlivePing* message type is used by ALFA nodes to signal its current state and what default configurations they have. Thus this message type comprises the node name and type. It also sends the configuration service name to enable the ALFA-Monitor to associate certain services to certain nodes. The current state is sent to identify the operation state of the node, as well as its default configurations. The configurations will be displayed in the ALFA-Monitor configuration window.
 
 ```c
 string node_name
@@ -122,6 +122,9 @@ ConfigMessage[] default_configurations
 
 ## **AlfaConfigure**
 
+
+The AlfaConfigure service is typically owned by the ALFA Nodes. This configuration type receives two variables as input as responses with a configuration status in an integer format. The inputs are composed of a vector of ConfigMessage and a configuration tag. 
+
 ```c
 string configutation_tag
 ConfigMessage[] configurations
@@ -129,4 +132,4 @@ ConfigMessage[] configurations
 int return_status
 ```
 
-# **Node topology**
+
